@@ -336,7 +336,7 @@ export function RewardedAdModal({
               color: '#787062',
             }}
           >
-            <span>Demo Ad Unit (Google AdMob Ready)</span>
+            <span>Sponsored Reward &middot; Family Safe</span>
             <span>Chai Wala Tycoon</span>
           </div>
         </motion.div>

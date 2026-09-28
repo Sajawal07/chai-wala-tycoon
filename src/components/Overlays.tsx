@@ -229,7 +229,7 @@ function Boost({ game, onClose }: { game: Game; onClose: () => void }) {
           </button>
         </>
     }
-    <span className="demo-note">Demo ad unit — Google AdMob integration ready.</span>
+    <span className="demo-note">Sponsored bonus &middot; Free 2x speed boost</span>
     <RewardedAdModal
       isOpen={adOpen}
       rewardType="boost"

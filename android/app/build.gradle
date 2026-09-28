@@ -16,10 +16,29 @@ android {
             ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
         }
     }
+    signingConfigs {
+        release {
+            def keyPropsFile = rootProject.file('key.properties')
+            if (keyPropsFile.exists()) {
+                def props = new Properties()
+                props.load(new FileInputStream(keyPropsFile))
+                storeFile file(props['storeFile'])
+                storePassword props['storePassword']
+                keyAlias props['keyAlias']
+                keyPassword props['keyPassword']
+            } else if (file('chaiwala-release.keystore').exists()) {
+                storeFile file('chaiwala-release.keystore')
+                storePassword 'chaiwala123'
+                keyAlias 'chaiwala'
+                keyPassword 'chaiwala123'
+            }
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
 }

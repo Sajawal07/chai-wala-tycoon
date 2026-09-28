@@ -7,6 +7,7 @@ node_modules/
 dist/
 dist-ssr/
 *.local
+playstore_release/
 
 # Android
 .gradle/
@@ -19,6 +20,15 @@ android/local.properties
 android/.idea/
 android/*.iml
 android/app/*.iml
+
+# Keystores & sensitive signing keys
+*.keystore
+*.jks
+*.key
+key.properties
+keystore_backup/
+android/app/*.keystore
+android/app/*.jks
 
 # IDE & OS
 .vscode/
