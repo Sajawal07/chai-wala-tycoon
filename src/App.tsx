@@ -16,6 +16,7 @@ import { Avatar, CartIllustration, ChaiCup, CoinIcon, IngredientArt, StaffFigure
 import { BargainDialog, CelebrationDialog, GameOverlay, type ShopTab } from './components/Overlays';
 import { SplashScreen } from './components/SplashScreen';
 import { RewardedAdModal } from './components/RewardedAdModal';
+import { setAmbientMode, resumeAudioContext } from './utils/ambientSound';
 
 type OpenOverlay = (name: ModalName, tab?: ShopTab) => void;
 
@@ -1059,6 +1060,37 @@ export default function App() {
   const handleFinishSplash = useCallback(() => {
     setShowSplash(false);
   }, []);
+
+  // Audio unlock listener for browser & mobile webview
+  useEffect(() => {
+    const unlockAudio = () => {
+      resumeAudioContext();
+    };
+    window.addEventListener('pointerdown', unlockAudio, { passive: true });
+    window.addEventListener('keydown', unlockAudio, { passive: true });
+    return () => {
+      window.removeEventListener('pointerdown', unlockAudio);
+      window.removeEventListener('keydown', unlockAudio);
+    };
+  }, []);
+
+  // Ambient sound system (Rain, Night Crickets & Girgit/Gecko, Morning Birds)
+  useEffect(() => {
+    if (showSplash || game.paused || game.appBackgrounded || !game.save.sound) {
+      setAmbientMode('none', false);
+      return;
+    }
+
+    if (game.save.weather === 'rainy') {
+      setAmbientMode('rain', true);
+    } else if (game.night) {
+      setAmbientMode('night', true);
+    } else if (game.hour >= 5 && game.hour < 11) {
+      setAmbientMode('morning', true);
+    } else {
+      setAmbientMode('none', true);
+    }
+  }, [showSplash, game.paused, game.appBackgrounded, game.save.sound, game.save.weather, game.night, game.hour]);
 
   // Keyboard controls for desktop
   useEffect(() => {
