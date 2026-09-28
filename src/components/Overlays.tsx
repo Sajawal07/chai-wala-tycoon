@@ -193,7 +193,7 @@ function Guide({ onClose }: { onClose: () => void }) {
 
 function Settings({ game, onClose }: { game: Game; onClose: () => void }) {
   const [confirmReset, setConfirmReset] = useState(false);
-  const APP_VERSION = '1.0.0';
+  const APP_VERSION = '1.0.1';
   const openUrl = (url: string) => { window.open(url, '_blank', 'noopener,noreferrer'); };
   return <Dialog title="Make yourself comfortable." eyebrow="THE LITTLE SETTINGS" description="Your corner of the city, just how you like it." onClose={onClose} className="settings-dialog">
     <div className="setting-row"><Volume2 size={21}/><div><h3>A little street-side sound</h3><p>Brewing notes, monsoon rain, morning birds & night crickets/girgit.</p></div><button className={`toggle ${game.save.sound ? 'on' : ''}`} role="switch" aria-checked={game.save.sound} aria-label="Game sound" onClick={game.toggleSound}><span/></button></div>
