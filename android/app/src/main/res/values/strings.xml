@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Chai Wala Tycoon</string>
+    <string name="title_activity_main">Chai Wala Tycoon</string>
+    <string name="package_name">com.chaiwala.tycoon</string>
+    <string name="custom_url_scheme">com.chaiwala.tycoon</string>
+</resources>
