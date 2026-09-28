@@ -203,10 +203,10 @@ function Settings({ game, onClose }: { game: Game; onClose: () => void }) {
     <div className="setting-row setting-link" role="button" tabIndex={0} onClick={() => openUrl('https://play.google.com/store/apps/details?id=com.chaiwala.tycoon')} onKeyDown={e => e.key === 'Enter' && openUrl('https://play.google.com/store/apps/details?id=com.chaiwala.tycoon')}>
       <Star size={21}/><div><h3>Rate the app</h3><p>Enjoying the chai? Leave us a ⭐⭐⭐⭐⭐ on the Play Store!</p></div><ExternalLink size={16} className="setting-link-icon"/>
     </div>
-    <div className="setting-row setting-link" role="button" tabIndex={0} onClick={() => openUrl('https://yourusername.github.io/chai-wala/privacy-policy.html')} onKeyDown={e => e.key === 'Enter' && openUrl('https://yourusername.github.io/chai-wala/privacy-policy.html')}>
+    <div className="setting-row setting-link" role="button" tabIndex={0} onClick={() => openUrl('https://sajawal07.github.io/chai-wala-tycoon/privacy-policy.html')} onKeyDown={e => e.key === 'Enter' && openUrl('https://sajawal07.github.io/chai-wala-tycoon/privacy-policy.html')}>
       <ShieldCheck size={21}/><div><h3>Privacy Policy</h3><p>How we handle your data (spoiler: we store nothing personal).</p></div><ExternalLink size={16} className="setting-link-icon"/>
     </div>
-    <div className="setting-row setting-link" role="button" tabIndex={0} onClick={() => openUrl('https://yourusername.github.io/chai-wala/terms.html')} onKeyDown={e => e.key === 'Enter' && openUrl('https://yourusername.github.io/chai-wala/terms.html')}>
+    <div className="setting-row setting-link" role="button" tabIndex={0} onClick={() => openUrl('https://sajawal07.github.io/chai-wala-tycoon/terms.html')} onKeyDown={e => e.key === 'Enter' && openUrl('https://sajawal07.github.io/chai-wala-tycoon/terms.html')}>
       <Heart size={21}/><div><h3>Terms of Service</h3><p>The little rules of our chai neighborhood.</p></div><ExternalLink size={16} className="setting-link-icon"/>
     </div>
     <div className="soft-note"><ShieldCheck size={24}/><div><strong>Your little dream is safe.</strong><p>Progress is saved automatically on this device. No account needed.</p></div></div>
